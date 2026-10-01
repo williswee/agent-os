@@ -1,0 +1,11 @@
+# Personal profiles, workflows, source material, memory, and generated work.
+/local/
+
+# Credentials and machine-specific files must not be shared.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db
