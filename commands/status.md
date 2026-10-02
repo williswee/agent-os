@@ -1,5 +1,10 @@
 # tiny brain status
 
+If demo mode is active, apply `commands/demo.md` and inspect only simulated
+state. Report the demo variant and stage, label setup and results as simulated,
+and never use actual `local/` files to fill gaps. Show virtual paths as code
+instead of the real file links requested below.
+
 This procedure is read-only. Inspect `local/profile.md`, the saved workflow names,
 and recent filenames under `local/work/`, if they exist. Open only the small number
 of recent files needed to explain progress; filenames alone do not prove completion.

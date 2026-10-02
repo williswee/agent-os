@@ -3,6 +3,9 @@
 This is a blank authoring format. Replace its guidance with the user's chosen task
 when saving a workflow. It is not a default task or an executable native command.
 
+During demo mode, follow `commands/demo.md`: preview steps and results in chat,
+simulate saves, and execute no task tools, regardless of this workflow's policy.
+
 ## When to use
 
 Describe the request this workflow helps with.

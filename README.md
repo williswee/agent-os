@@ -4,6 +4,43 @@ tiny brain gives your AI assistant a set of Markdown files for your goals, prefe
 
 The assistant asks about your goals and constraints, then drafts a profile and a workflow for you to review. You use these files through Codex, Claude Code, or Cursor.
 
+## Try it before setup
+
+Open this repository's folder in your AI tool and type `/demo`, or say "tiny brain demo". Choose how you want to try it:
+
+| Mode | What you get |
+| --- | --- |
+| `/demo show` | A short fictional walkthrough, showing the user's input, proposed setup, sample result, and how to resume or revise it. Useful for showing someone what tiny brain does. |
+| `/demo test` | A fresh interactive onboarding session. You answer as a new user, so you can try different goals, skip questions, correct the draft, and find confusing steps. |
+
+Both follow the repository's current instructions. The assistant labels replies `Demo: show` or `Demo: test` and keeps the practice setup in chat. "Save", "remember", and "run" simulate the corresponding steps. It can show sample results, but it does not change files, run code or external actions, browse the web, use connected services, commit, or push. It ignores your existing personal setup.
+
+### Test onboarding, step by step
+
+Send each command or answer as a separate message in the **same chat**:
+
+1. Send `/demo test`. This starts onboarding immediately; you do not need to send `/demo` or `/start` first.
+2. Answer the assistant's questions in ordinary messages. Try a goal, skip an optional detail, or correct the proposed setup as a new user would.
+3. When a setup is proposed, you can say "Save this setup" and then "Run my first workflow" to try the rest of the experience. Both remain simulated. You can also choose session-only use.
+4. Send `/demo review` whenever you want feedback, even halfway through onboarding. It reviews what happened so far and suggests improvements in chat.
+5. After the review, reply normally to continue the same attempt, use `/demo reset` to try again from scratch, or use `/demo exit` to finish.
+
+Review is optional and does not end or reset the demo. Review before resetting or exiting if you want feedback on that attempt. Do not send `/demo test` again just to continue: it starts a fresh attempt.
+
+### Show it to someone
+
+Send `/demo show` for the short walkthrough. You can then send `/demo review` to discuss it, `/demo test` to let the viewer try onboarding from scratch, or `/demo exit` to finish. You do not need to use every command in order. `/demo` on its own is just a menu for choosing show or test.
+
+Leaving demo does not save the practice setup or start real work. To begin real setup afterward, say "Start tiny brain".
+
+If your tool intercepts slash commands, say "tiny brain demo test" or paste:
+
+```text
+Read AGENTS.md and commands/demo.md, then start demo test.
+```
+
+Demo is a conversational instruction, not a permission sandbox. The tool's controls still apply. Normal session-only setup can do real tasks without saving a profile; demo simulates file and external actions throughout.
+
 ## Start here
 
 1. In Codex, create a local project with an empty folder on your computer, such as `tiny brain`.
@@ -380,7 +417,7 @@ Other locations support your context:
 | --- | --- |
 | [AGENTS.md](AGENTS.md) | Short instructions for the assistant |
 | [CLAUDE.md](CLAUDE.md) | Imports the same instructions for Claude Code |
-| [commands/](commands/) | Setup, help, status, and improvement procedures |
+| [commands/](commands/) | Setup, demo, help, status, and improvement procedures |
 | [templates/](templates/) | Blank starting formats, with no sample user's profile |
 | `local/` | Your profile, workflows, and work. Created when you save setup and ignored by Git |
 | [tiny-brain-quickstart.md](tiny-brain-quickstart.md) | Beginner guide |

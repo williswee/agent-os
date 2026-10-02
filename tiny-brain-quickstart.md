@@ -36,6 +36,43 @@ and say:
 The full starter is the easier route; the two-guide route asks the assistant to
 build the small set of files first.
 
+## Try a demo first
+
+With the starter folder open, say "tiny brain demo" or type `/demo` to choose:
+
+- `/demo show` gives a short fictional walkthrough of setup, a sample task, and
+  returning to the work. Use it to explain tiny brain to someone new.
+- `/demo test` starts fresh onboarding for you to try. Answer as a new user, skip
+  optional details, or correct the draft to test how the conversation responds.
+
+The assistant follows the current starter files and labels demo replies. All
+practice setup stays in chat, even if you say "save", "remember", or "run".
+It does not read your existing personal setup, change files, run code or external
+actions, browse the web, call connected services, commit, or push.
+
+To test onboarding, send these as separate messages in the same chat:
+
+1. `/demo test` starts the interview. You do not need `/demo` or `/start` first.
+2. Answer each question normally. When offered a setup, try "Save this setup"
+   and then "Run my first workflow", or choose session-only use. Actions stay simulated.
+3. `/demo review` pauses for feedback on the experience so far. You can use it
+   halfway through; finishing onboarding first is not required.
+4. Reply normally to continue, use `/demo reset` for a fresh attempt, or
+   `/demo exit` to finish. Review before reset or exit if you want feedback on
+   that attempt. Sending `/demo test` again also starts over.
+
+For a presentation, start with `/demo show`. Then optionally review it, switch
+to `/demo test` so the viewer can try it, or exit. Review is optional and keeps
+the current demo open; the commands are not a mandatory sequence.
+
+"tiny brain demo test" also works as ordinary text. If needed, paste:
+
+> Read AGENTS.md and commands/demo.md, then start demo test.
+
+Demo is an instruction for the conversation, not a permission sandbox. Normal
+session-only use can do real tasks without saving a profile; demo simulates file
+and external actions. After leaving demo, continue below when you want real setup.
+
 ## 2. Say one sentence
 
 > Start tiny brain
@@ -129,6 +166,8 @@ This improves the workspace's instructions and workflows, not the AI model itsel
 | --- | --- |
 | It does not know how to start | “Read AGENTS.md and follow commands/start.md.” Check you opened the correct folder. |
 | `/start` is unrecognized or opens a tool menu | Say “Start tiny brain” as ordinary text. This starter does not install native slash commands. |
+| `/demo` is unrecognized or opens a tool menu | Say "tiny brain demo" or use the direct file-reading prompt above. |
+| Demo uses an old practice profile | Say "tiny brain demo reset" to begin the same mode fresh. A demo lasts only in its current conversation. |
 | It assumes an industry or location you never supplied | “That is not my context. Follow commands/start.md using only what I've told you.” Check the saved profile for mistaken facts. |
 | It asks the same questions again | Point it to `local/profile.md`; ask it to continue or update your existing setup. |
 | It insists on setup before answering a simple question | Ask it to re-read the five working rules in `AGENTS.md`. Setup is optional for ordinary tasks. |

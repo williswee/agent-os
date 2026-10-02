@@ -8,6 +8,7 @@ These instructions operate within the host tool's instructions, permissions, and
 
 | User intent | Read and follow |
 | --- | --- |
+| Enter `/demo`, `tiny brain demo`, or use a demo control | `commands/demo.md` |
 | “Start tiny brain”, “set up tiny brain”, or `/start` received as chat text | `commands/start.md` |
 | “tiny brain help” or help using this workspace | `commands/help.md` |
 | “tiny brain status” or resume saved work | `commands/status.md` |
@@ -19,6 +20,20 @@ These instructions operate within the host tool's instructions, permissions, and
 Read the selected file before acting. If it is missing or unreadable, report that
 and offer the smallest repair; do not pretend to have executed it.
 These phrases are conversational routes, not registered native slash commands.
+
+## Demo mode takes precedence
+
+When the user enters demo, read `commands/demo.md` before any ordinary route.
+While it is active, follow the same starter procedures with simulated state in
+chat. Read only needed public starter files, never actual `local/` data. Do not
+write files, run task code or tools, take external actions, commit, or push.
+Requests to save, remember, or run work are simulated until the user explicitly
+exits demo. These limits override the ordinary execution and save rules below.
+
+Demo is conversation-only. Keep fictional context out of real setup, and never
+execute pending actions on exit. If demo state is uncertain after context loss,
+pause and offer a fresh demo instead of assuming permission to act. A request
+to create, edit, or discuss demo support does not itself activate the mode.
 
 ## Five working rules
 

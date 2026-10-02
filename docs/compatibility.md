@@ -17,9 +17,26 @@ instructions. Existing sessions may retain older instructions. If automatic
 loading fails, use: “Read AGENTS.md and follow commands/start.md.”
 
 `commands/` is a portable collection of instructions, not a native slash-command
-directory. `/start` works only if it reaches the assistant as chat text. The reliable
-entry phrase in this design is “Start tiny brain”. Adding native wrappers is optional;
-their discovery, names, and syntax need separate testing in each client.
+directory. `/start` and `/demo` work only if they reach the assistant as chat text.
+Use "Start tiny brain" or "tiny brain demo" when the tool intercepts slash commands.
+Demo controls also accept ordinary text, such as "tiny brain demo test" and
+"tiny brain demo exit". Adding native wrappers is optional; their discovery, names,
+and syntax need separate testing in each client.
+
+For demo, the direct fallback is:
+
+> Read AGENTS.md and commands/demo.md, then start demo test.
+
+Demo reads the starter's public instructions and simulates file and external
+actions in chat. It does not inspect existing `local/` data or use connected
+services. It is a conversational mode, not an enforced sandbox. For a demonstration
+where tool access must be technically restricted, use the host's available controls.
+Demo state does not persist into a new chat. On uncertain or lost state, restart
+with the fallback rather than assuming a previous practice setup survived.
+
+The runtime verification table above includes demo behavior. Adding these
+instructions does not verify them in any client. Demo test helps assess the
+conversation; it does not test actual file writes, permissions, or integrations.
 
 ## Recover from unrelated onboarding questions
 
@@ -34,7 +51,7 @@ asks about a domain the user did not choose:
 3. Start a fresh chat in the corrected folder. If unrelated behavior continues,
    check the tool's global/personal instructions and any installed plugin with a
    similarly named command. Avoid deleting unrelated settings.
-4. Try the direct file-reading fallback above. Preserve a short sanitized transcript
+4. Try "Read AGENTS.md and follow commands/start.md." Preserve a short sanitized transcript
    and the relevant file paths if reporting a failure.
 
 The original quickstart's worked example is a plausible cause of the reported

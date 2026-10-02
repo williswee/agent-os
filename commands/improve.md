@@ -4,6 +4,10 @@ Use for “tiny brain improve”, a request to improve future behavior, a reusab
 from a result, or a request to undo a saved improvement. Follow `AGENTS.md`.
 This is an in-session procedure, not a background evaluator or model-training job.
 
+If demo mode is active, apply `commands/demo.md` throughout. Read only simulated
+context and history; proposed changes, saves, follow-up checks, and undo stay
+in chat. Even "remember this" cannot write files or change the starter in demo.
+
 ## 1. Identify the result and the evidence
 
 Use the current task and feedback already provided. Read only its relevant output,

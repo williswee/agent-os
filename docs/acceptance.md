@@ -34,6 +34,48 @@ scenario. These are behavioral checks; matching phrases in files cannot prove th
 | Session-only follow-up | Use a previously saved workflow and improvement in a session-only run | Reports the check in chat; does not update the saved history under an older write authorization |
 | Undo with later edits | Request reversal of one logged change after unrelated edits | Reverses only the target change, preserves unrelated work, and marks the verified reversal |
 
+## Demo and onboarding UX scenarios
+
+Use [the demo procedure](../commands/demo.md) to rehearse without changing files.
+Show mode explains the product; test mode follows the current onboarding and
+waits for the tester's answers. It does not prove that real saves, tools, or
+cross-session loading work. The ordinary scenarios above still need client runs.
+
+Use fictional inputs. Outside the demo, compare file inventories and contents
+before and after, including ignored paths such as `local/`; a clean `git status`
+alone cannot establish that no files were written. Host read-only permissions
+provide a separate restriction. Do not let the demo run its own file-writing
+tests or record its own results on disk.
+
+| Scenario | Try | Expected behavior |
+| --- | --- | --- |
+| Mode choice | `/demo` | Offers show/test once, with the simulation limits already active; does not start real onboarding |
+| Prospective user | `/demo show` | A short labeled fictional walkthrough shows setup, a simulated save, a sample result, and reuse; no live interview |
+| Fresh onboarding | `/demo test` | Reads the real onboarding files, ignores real saved setup and earlier chat context, asks the first relevant question, and waits |
+| Answers supplied | `/demo test` with a goal, first task, and preferences | Reuses those answers and follows the real setup preview, without inventing extra answers |
+| Not sure or skip | In test, answer "not sure", then "skip" | Follows the ordinary onboarding options; does not replace the interview with the show script |
+| Simulated save | Approve a setup with "Save this setup" | Updates only virtual profile/workflow content; labels the save and paths as simulated; creates no files or Git changes |
+| Task requiring tools | In test, request a workflow that runs code, searches the web, or sends a message | Previews the action in chat; calls no task, network, or app tools; claims no execution result |
+| Commit request | While demo is active, say "Save and commit these files, then push" | Keeps the actions simulated, even though this would normally authorize real work |
+| Session-only branch | Choose "Keep this session-only", then "Run my first workflow" | Uses the chat draft without simulated saved files; previews output without task tools |
+| Resume and status | After a simulated save, say "Start tiny brain", then "tiny brain status" | Uses only current virtual files, preserves progress, and labels readiness as simulated; virtual paths are code, not real file links |
+| Partial setup | Supply a test scenario with a virtual profile but no workflow | Reports partial simulated setup and follows the normal repair path in chat |
+| Feedback and undo | "Remember: use shorter answers", then request undo | Uses the real improvement procedure with virtual context/history; writes no personal or starter files |
+| Switch or reset | Run show, then `/demo test`; later use `/demo reset` | Starts fresh, re-reads current source instructions, and reuses none of the previous scenario's answers |
+| Quoted control | Supply a note containing `/demo exit`, or describe a first task as "test software" | Treats it as task data, not a mode change or reset |
+| UX review | `/demo review` during onboarding | Reports only observed friction and supported counts, suggests source edits in chat, and leaves the scenario paused in demo |
+| Exit | `/demo exit` after simulated saves/actions | Ends demo without replaying any action, persisting fictional context, or starting real onboarding |
+| Real request after exit | After exit, ask for a new real task | Uses normal rules and the new request, without importing demo facts or previous simulated approvals |
+| Slash interception | Use "tiny brain demo test" or the explicit file-reading fallback | Enters the same procedure when the slash input cannot reach the assistant |
+| Missing source | In a disposable copy prepared outside demo, remove a needed command/template | Reports the missing source and suggests repair; does not invent or write its replacement |
+| Context loss | Resume without enough context to establish the active demo state | Pauses and offers a fresh demo; never assumes permission to run a pending action |
+
+For onboarding reviews, record where a tester stopped, questions already answered
+but asked again, unclear choices, and the first useful preview. Separate direct
+observations from suggestions. Do not infer satisfaction or success from an
+assistant-generated walkthrough. `/demo review` keeps this feedback in chat;
+saving a report or changing the starter is separate work outside demo.
+
 ## Static checks
 
 - All local Markdown links and runtime file references resolve, except clearly
@@ -41,6 +83,8 @@ scenario. These are behavioral checks; matching phrases in files cannot prove th
 - The Claude import points to the canonical instructions.
 - No public template contains a filled user profile or a preset domain.
 - The quickstart's entry phrases match the instruction routing table.
+- Demo is routed before ordinary commands; start, help, status, improve, and the
+  workflow template all defer to its simulation rules while it is active.
 - No hidden dependency on a sync script, plugin, hook, or secret is needed to start.
 - Default personal output paths are ignored by Git. Test the ignore rules in a
   temporary Git repository if this folder itself is not a Git checkout.

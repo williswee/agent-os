@@ -3,6 +3,10 @@
 Set up a small workspace from this user's answers. This file is the authoritative
 onboarding procedure. Read `AGENTS.md` first if it is not already in context.
 
+If demo mode is active, apply `commands/demo.md` before every step below. Use
+only its simulated state for personal files; all saves and first-task actions
+remain chat previews. Keep the same onboarding questions and decisions.
+
 ## 1. Check what exists
 
 First reuse any setup draft already agreed in this conversation, including a
