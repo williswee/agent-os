@@ -1,11 +1,11 @@
-# Contributing to Agent OS
+# Contributing to tiny brain
 
 Help beginners reach a useful result with clear instructions and as little setup
 as possible. Small fixes, clearer examples, and reports from real use are welcome.
 
 ## Report a problem or suggest a change
 
-Open an [issue](https://github.com/williswee/agent-os/issues) with:
+Open an [issue](https://github.com/williswee/tiny-brain/issues) with:
 
 - The AI tool, version, and operating system you used.
 - What you tried, what you expected, and what happened.

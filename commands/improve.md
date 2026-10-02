@@ -1,6 +1,6 @@
 # Improve from results and feedback
 
-Use for “Agent OS improve”, a request to improve future behavior, a reusable lesson
+Use for “tiny brain improve”, a request to improve future behavior, a reusable lesson
 from a result, or a request to undo a saved improvement. Follow `AGENTS.md`.
 This is an in-session procedure, not a background evaluator or model-training job.
 
@@ -44,7 +44,7 @@ make a failed result pass. If no change is justified, say so without manufacturi
 
 “Remember this preference” or “update this workflow to …” authorizes that specified
 change. Show what changed and do not ask again. Feedback without a request to persist
-it, or “Agent OS improve” alone, authorizes review and proposals; ask once before
+it, or “tiny brain improve” alone, authorizes review and proposals; ask once before
 saving a proposed lasting change. An output-save policy is not permission to mutate
 context or workflow instructions.
 

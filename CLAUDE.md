@@ -1,3 +1,3 @@
-# Agent OS
+# tiny brain
 
 @AGENTS.md

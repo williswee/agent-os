@@ -1,4 +1,4 @@
-# Start Agent OS
+# Start tiny brain
 
 Set up a small workspace from this user's answers. This file is the authoritative
 onboarding procedure. Read `AGENTS.md` first if it is not already in context.

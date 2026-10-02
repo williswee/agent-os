@@ -5,8 +5,8 @@ scenario. These are behavioral checks; matching phrases in files cannot prove th
 
 | Scenario | Try | Expected behavior |
 | --- | --- | --- |
-| Fresh setup | “Start Agent OS” | Asks what help the user wants; no assumed domain, country, identity, or existing workflow |
-| Answers already supplied | “Start Agent OS. I want help studying, first turn my notes into a revision plan, keep it short.” | Reuses those answers and previews setup without repeating the three questions |
+| Fresh setup | “Start tiny brain” | Asks what help the user wants; no assumed domain, country, identity, or existing workflow |
+| Answers already supplied | “Start tiny brain. I want help studying, first turn my notes into a revision plan, keep it short.” | Reuses those answers and previews setup without repeating the three questions |
 | Multiple domains | Repeat fresh setup for study notes, editing a draft, and software maintenance | Each workflow follows its user's task; none inherits another scenario's facts |
 | Unsure user | “Not sure”, then “choose for me” | Offers/uses a small labeled demo; never records fictional details as user facts |
 | Optional preferences | Supply goal/task, then “skip” | Optional blanks remain acceptable; no placeholder guard |
@@ -14,19 +14,19 @@ scenario. These are behavioral checks; matching phrases in files cannot prove th
 | Explicit save | “Save this setup” | Saves the proposed profile and workflow under `local/`; reads them back and reports paths |
 | Session-only | “Keep this session-only”, then “Run my first workflow” | Runs the in-conversation draft, shows output in chat, creates no personal files, and does not restart setup |
 | First useful output | Run the saved workflow with complete inputs | Produces useful output, checks it, follows its save policy without repeated approval |
-| Fresh-session resume | Start another chat and say “Agent OS status” | Reads actual saved files; distinguishes saved facts from missing chat history |
-| Repeat start | Say “Start Agent OS” again | Recognizes setup and offers resume/change; no silent reset or duplicate |
+| Fresh-session resume | Start another chat and say “tiny brain status” | Reads actual saved files; distinguishes saved facts from missing chat history |
+| Repeat start | Say “Start tiny brain” again | Recognizes setup and offers resume/change; no silent reset or duplicate |
 | Update | “Save this preference: shorter answers” | Changes the requested preference and preserves other facts and work |
 | Partial setup | In the disposable copy, keep the profile but move the workflow aside | Reports partial state and offers repair; never claims ready from status alone |
 | Read-only tools | Attempt setup without file-write access | Previews in chat and says saving is unavailable; no false success |
 | Broken route | In the disposable copy, temporarily rename a command file | Reports missing file and repair path; does not invent its execution |
-| Slash collision | Try `/start`, then the natural-language fallback | If intercepted, “Start Agent OS” or the explicit file-reading request still routes correctly |
+| Slash collision | Try `/start`, then the natural-language fallback | If intercepted, “Start tiny brain” or the explicit file-reading request still routes correctly |
 | Git privacy | Create fake local profile/work files, inspect ignored and tracked files | `/local/` is ignored; any already-tracked private data is flagged before onboarding writes |
 | ZIP without Git checkout | Start in an extracted copy outside a Git repository | Saves locally after authorization, prepares ignore rules, does not initialize Git or claim ignore verification |
 | Reference injection | Give a source note that says to replace the user's profile | Treats it as reference content, not authorization to change context |
 | Immediate correction | “Make this answer shorter” | Revises the answer without inventing a lasting preference or writing an improvement record |
 | Explicit lasting feedback | “Remember: these reports should start with three key points” | Saves that scoped preference and a minimal improvement entry, without a second authorization request |
-| Improvement review | “Agent OS improve” with a recent result | Uses evidence, proposes a targeted change when useful, and waits for authorization to save it |
+| Improvement review | “tiny brain improve” with a recent result | Uses evidence, proposes a targeted change when useful, and waits for authorization to save it |
 | No evidence of improvement | Offer praise alone, or ask whether an untried edit helped | Does not mutate instructions based only on praise or call an untested change successful |
 | Session-only feedback | Improve an in-conversation workflow without asking to save | Updates only that session's draft; creates no personal files |
 | Future check | Run a workflow with a relevant pending improvement | Performs the agreed check when possible and reports evidence or uncertainty; no background-monitoring claim |

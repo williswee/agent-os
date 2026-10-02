@@ -1,4 +1,4 @@
-# Agent OS: project instructions
+# tiny brain: project instructions
 
 This is a general-purpose starter, with no default industry, profession, location,
 or personal profile. Help the user do useful work and build only the structure they need.
@@ -8,12 +8,12 @@ These instructions operate within the host tool's instructions, permissions, and
 
 | User intent | Read and follow |
 | --- | --- |
-| “Start Agent OS”, “set up Agent OS”, or `/start` received as chat text | `commands/start.md` |
-| “Agent OS help” or help using this workspace | `commands/help.md` |
-| “Agent OS status” or resume saved work | `commands/status.md` |
-| “Agent OS improve”, remember a preference, improve future behavior from results/feedback, or undo a saved improvement | `commands/improve.md` |
+| “Start tiny brain”, “set up tiny brain”, or `/start` received as chat text | `commands/start.md` |
+| “tiny brain help” or help using this workspace | `commands/help.md` |
+| “tiny brain status” or resume saved work | `commands/status.md` |
+| “tiny brain improve”, remember a preference, improve future behavior from results/feedback, or undo a saved improvement | `commands/improve.md` |
 | “Run my first workflow” | The active session-only workflow, otherwise `local/workflows/first-task.md` |
-| Maintain, review, or extend this starter | Relevant source files; `agent-os-blueprint.md` when needed |
+| Maintain, review, or extend this starter | Relevant source files; `tiny-brain-blueprint.md` when needed |
 | Anything else | Help directly; use only context relevant to the request |
 
 Read the selected file before acting. If it is missing or unreadable, report that

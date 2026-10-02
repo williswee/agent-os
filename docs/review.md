@@ -1,4 +1,4 @@
-# Review of the original Agent OS guides
+# Review of the original tiny brain guides
 
 The original blueprint has a useful core: readable instructions, explicit context, reusable workflows, and saved work. Its main weakness is that it asks beginners to build and maintain an elaborate framework before they experience useful work. It also carries assumptions from one particular coaching and real-estate workflow into a supposedly general starter.
 
@@ -19,7 +19,7 @@ The revised starter removes that example from the onboarding path and requires t
 | Priority | Finding in the originals | Change in this starter |
 | --- | --- | --- |
 | High | A single detailed US real-estate example can become default user context. | Use generic onboarding and explicit boundaries between examples, user facts, and instructions. |
-| High | A nine-part worksheet, long kickoff prompt, eleven build phases, and multiple checkpoints precede the first useful task. | Ship the small starting structure. Begin with “Start Agent OS,” answer three questions, review one setup draft, and run a first task. |
+| High | A nine-part worksheet, long kickoff prompt, eleven build phases, and multiple checkpoints precede the first useful task. | Ship the small starting structure. Begin with “Start tiny brain,” answer three questions, review one setup draft, and run a first task. |
 | High | The blueprint says “Write me X” is not consent, requires a clarifying question even when the request is clear, and repeatedly pauses between steps and writes. | Treat explicit requests as authorization for ordinary local work. Ask when information is missing or an action needs separate authorization. Keep a single review point for the initial profile and workflow. |
 | High | The Context Guard can block all work because a placeholder remains. Its broad appendix rule also conflicts with optional fields. Onboarding is requested before command wiring exists. | Allow partial context and reasonable defaults. Ordinary help and work remain available. Use a directly readable onboarding document from the beginning. |
 | High | Personal context and work are not protected by the sample ignore rules, although hook state is. Telemetry and automatic web-prefill appear in the default architecture. | Store personal setup and artifacts under ignored `local/`. Do not enable telemetry or search for personal facts by default. |
@@ -34,15 +34,15 @@ The sample git policy, fixed refusal sentences, mandatory coaching questions, an
 ## What is saved here
 
 - [`README.md`](../README.md) is the repository entry point.
-- [`agent-os-quickstart.md`](../agent-os-quickstart.md) is the short beginner path.
-- [`agent-os-blueprint.md`](../agent-os-blueprint.md) explains the architecture and how to extend it.
+- [`tiny-brain-quickstart.md`](../tiny-brain-quickstart.md) is the short beginner path.
+- [`tiny-brain-blueprint.md`](../tiny-brain-blueprint.md) explains the architecture and how to extend it.
 - [`AGENTS.md`](../AGENTS.md) and [`CLAUDE.md`](../CLAUDE.md) provide the runtime instructions and Claude bridge.
 - [`commands/start.md`](../commands/start.md), [`commands/help.md`](../commands/help.md), and [`commands/status.md`](../commands/status.md) support setup and daily use.
 - [`templates/profile.md`](../templates/profile.md) and [`templates/workflow.md`](../templates/workflow.md) provide reusable starting structures.
 
 Onboarding creates `local/profile.md`, `local/workflows/first-task.md`, and `local/work/` after setup approval. These belong to the user, rather than the distributed template. Ignoring them reduces accidental commits; it does not encrypt them or prevent an AI tool from reading files the user authorizes it to read.
 
-“Start Agent OS” is the portable instruction. `/start` can be understood when it reaches the agent as text, but this repository does not register a native slash command in every host. A host may interpret slash-prefixed input itself.
+“Start tiny brain” is the portable instruction. `/start` can be understood when it reaches the agent as text, but this repository does not register a native slash command in every host. A host may interpret slash-prefixed input itself.
 
 ## Remaining blind spots and recommended next steps
 
@@ -60,7 +60,7 @@ Static file checks cannot demonstrate that an installed client discovers instruc
 
 Test at least these cases:
 
-1. A fresh user says “Start Agent OS” with no domain specified. The assistant asks generic setup questions and invents no background facts.
+1. A fresh user says “Start tiny brain” with no domain specified. The assistant asks generic setup questions and invents no background facts.
 2. A user supplies their purpose and constraints up front. The assistant reuses that information rather than making them repeat the whole interview.
 3. A user is unsure, skips an optional detail, or asks an ordinary question before setup. The assistant still helps.
 4. A returning user resumes setup. Existing context and artifacts are preserved, with changes reviewed rather than silently reset.
@@ -72,7 +72,7 @@ Record the client, version, date, scenario, and result. Do not turn an intended 
 
 ### Maintain the open-source release
 
-The maintainer selected the [MIT License](../LICENSE) for the public [Agent OS repository](https://github.com/williswee/agent-os). [Contribution and support guidance](../CONTRIBUTING.md) explains how to report problems and submit changes without publishing personal context.
+The maintainer selected the [MIT License](../LICENSE) for the public [tiny brain repository](https://github.com/williswee/tiny-brain). [Contribution and support guidance](../CONTRIBUTING.md) explains how to report problems and submit changes without publishing personal context.
 
 After the pilot, use recurring reports to improve that guidance and consider a small issue template asking for the client/version, expected behavior, and a sanitized reproduction. Keep contributions to the public template separate from personal work in a user's copy.
 

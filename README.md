@@ -1,18 +1,18 @@
-# Agent OS
+# tiny brain
 
-Agent OS gives your AI assistant a set of Markdown files for your goals, preferences, repeatable tasks, and saved work.
+tiny brain gives your AI assistant a set of Markdown files for your goals, preferences, repeatable tasks, and saved work.
 
 The assistant asks about your goals and constraints, then drafts a profile and a workflow for you to review. You use these files through Codex, Claude Code, or Cursor.
 
 ## Start here
 
-1. In Codex, create a local project with an empty folder on your computer, such as `my-agent-os`.
+1. In Codex, create a local project with an empty folder on your computer, such as `tiny brain`.
 2. Open a chat in that project.
 3. Copy and paste this prompt into the chat:
 
 ```text
-Set up Agent OS in this project using this repository:
-https://github.com/williswee/agent-os
+Set up tiny brain in this project using this repository:
+https://github.com/williswee/tiny-brain
 
 Read its README and copy the starter files, including .gitignore, into this folder. Preserve any existing work. Follow AGENTS.md and commands/start.md to help me define my goals, first task, constraints, and preferences. Ask about one topic at a time and use answers I've already given. Show me the proposed personal setup before saving it.
 ```
@@ -24,12 +24,12 @@ The assistant drafts your profile and first workflow from your answers. Review t
 If you already have the files, open their folder in your AI tool. If you downloaded a ZIP, extract it first. Then paste:
 
 ```text
-Read AGENTS.md and follow commands/start.md to help me set up Agent OS.
+Read AGENTS.md and follow commands/start.md to help me set up tiny brain.
 ```
 
-Once the files are in place, you can also say "Start Agent OS". These are ordinary chat messages, so you do not need a slash command. If the assistant cannot retrieve the repository, download it from GitHub with **Code > Download ZIP** and follow the steps above.
+Once the files are in place, you can also say "Start tiny brain". These are ordinary chat messages, so you do not need a slash command. If the assistant cannot retrieve the repository, download it from GitHub with **Code > Download ZIP** and follow the steps above.
 
-See the [quickstart](agent-os-quickstart.md) for using a downloaded copy, your first session, and troubleshooting.
+See the [quickstart](tiny-brain-quickstart.md) for using a downloaded copy, your first session, and troubleshooting.
 
 ## What you get
 
@@ -208,7 +208,7 @@ Consider a fictional weekly sales review. These details illustrate the process a
 | Third | You explain that deals waiting on procurement need a different inactivity threshold. The assistant proposes an edit to `local/context/constraints.md` for your approval and records the saved change in `local/improvements.md`. | The next run has an agreed check for whether that rule reduces false alerts without hiding missed follow-ups. |
 | Fourth | The assistant checks the revised rule against the new export and your review of the flagged deals. It reports supporting evidence, a failed check, mixed results, or missing evidence. | You can keep, revise, or undo the rule based on what happened. The saved review also records how much preparation and correction the run needed. |
 
-Compare this with your current ChatGPT or manual process. If that process already preserves the same context, methods, and action history, check whether Agent OS reduces the effort to maintain and use them.
+Compare this with your current ChatGPT or manual process. If that process already preserves the same context, methods, and action history, check whether tiny brain reduces the effort to maintain and use them.
 
 ### Measure whether it helps
 
@@ -221,7 +221,7 @@ Before the first run, record the time and corrections your current process takes
 | Follow-through | Actions due, completed, overdue, or still unverified. Record the source of each status. |
 | Business outcome | The relevant measure from the use-case table, with the same definition and reporting window each time. Note other changes that could affect it. |
 
-Useful evidence is less total work at acceptable quality, fewer missed commitments, or better decisions you can trace to the review. A polished report or repeated usage alone does not prove value. Revenue and retention may take longer to observe than four cycles, and a change in either does not prove that Agent OS caused it.
+Useful evidence is less total work at acceptable quality, fewer missed commitments, or better decisions you can trace to the review. A polished report or repeated usage alone does not prove value. Revenue and retention may take longer to observe than four cycles, and a change in either does not prove that tiny brain caused it.
 
 To build one of these workflows, paste:
 
@@ -343,7 +343,7 @@ flowchart TD
 | "The plan missed the deadline. Add a deadline check to this workflow." | Update that workflow and check the next plan against its deadline. |
 | "This task took twice as long as the plan allowed." | Review the estimate and propose an adjustment to try. One result is not enough to establish a general rule. |
 
-Say "Agent OS improve" to review a recent result and your feedback. The assistant should explain when there is no useful change to make. Praise, silence, and the assistant's confidence do not prove that a workflow is better.
+Say "tiny brain improve" to review a recent result and your feedback. The assistant should explain when there is no useful change to make. Praise, silence, and the assistant's confidence do not prove that a workflow is better.
 
 The context or workflow file holds the current instruction. The assistant records saved changes in `local/improvements.md`, along with their reasons and follow-up checks. You can ask it to revise or undo a specific change. If you keep the session in chat only, the assistant writes no feedback or history files unless you ask.
 
@@ -383,8 +383,8 @@ Other locations support your context:
 | [commands/](commands/) | Setup, help, status, and improvement procedures |
 | [templates/](templates/) | Blank starting formats, with no sample user's profile |
 | `local/` | Your profile, workflows, and work. Created when you save setup and ignored by Git |
-| [agent-os-quickstart.md](agent-os-quickstart.md) | Beginner guide |
-| [agent-os-blueprint.md](agent-os-blueprint.md) | Optional design reference for extending or rebuilding the system |
+| [tiny-brain-quickstart.md](tiny-brain-quickstart.md) | Beginner guide |
+| [tiny-brain-blueprint.md](tiny-brain-blueprint.md) | Optional design reference for extending or rebuilding the system |
 | [docs/review.md](docs/review.md) | Review of the original guides and remaining product decisions |
 | [docs/acceptance.md](docs/acceptance.md) | Scenarios for checking the beginner experience |
 
@@ -396,8 +396,8 @@ To share a workflow, ask the assistant to make a separate copy with personal det
 
 ## Contributing and support
 
-Ask questions or report problems in [GitHub Issues](https://github.com/williswee/agent-os/issues). See [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute without sharing personal context. The [compatibility notes](docs/compatibility.md) list the tools' file-loading conventions and which client tests remain pending.
+Ask questions or report problems in [GitHub Issues](https://github.com/williswee/tiny-brain/issues). See [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute without sharing personal context. The [compatibility notes](docs/compatibility.md) list the tools' file-loading conventions and which client tests remain pending.
 
 ## License
 
-Agent OS is open source under the [MIT License](LICENSE). You can use, modify, and share it, including commercially, subject to the license terms.
+tiny brain is open source under the [MIT License](LICENSE). You can use, modify, and share it, including commercially, subject to the license terms.

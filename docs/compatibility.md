@@ -18,7 +18,7 @@ loading fails, use: “Read AGENTS.md and follow commands/start.md.”
 
 `commands/` is a portable collection of instructions, not a native slash-command
 directory. `/start` works only if it reaches the assistant as chat text. The reliable
-entry phrase in this design is “Start Agent OS”. Adding native wrappers is optional;
+entry phrase in this design is “Start tiny brain”. Adding native wrappers is optional;
 their discovery, names, and syntax need separate testing in each client.
 
 ## Recover from unrelated onboarding questions
